@@ -20,9 +20,10 @@ class CreateProfilesTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('gender', 6);
-            $table->date('date_of_birth');
-            $table->date('date_of_death')->nullable($value = true);
+            $table->date('dob');
+            $table->date('dod')->nullable($value = true);
             $table->string('location', 100)->nullable($value = true);
+            $table->text('description')->nullable($value = true);
 
             // Relationship
             $table->unsignedInteger('father_id')->nullable($value = true);

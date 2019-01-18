@@ -31,10 +31,10 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstNameMale,
                 'last_name'     => $lastname1,
                 'gender'        => 'male',
-                'date_of_birth' => $faker->date($format = 'Y-m-d', $max = 'now'),
-                'date_of_death' => null,
+                'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'dod'           => null,
                 'location'      => $faker->city,
-                'user_id'       => 1,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
             $father_id = DB::getPdo()->lastInsertId();
             
@@ -43,9 +43,10 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstNameFemale,
                 'last_name'     => $lastname1,
                 'gender'        => 'female',
-                'date_of_birth' => $faker->date($format = 'Y-m-d', $max = 'now'),
-                'date_of_death' => null,
+                'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'dod'           => null,
                 'location'      => $faker->city,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
             $mother_id = DB::getPdo()->lastInsertId();
 
@@ -55,11 +56,12 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstName($gender),
                 'last_name'     => $lastname1,
                 'gender'        => $gender,
-                'date_of_birth' => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
-                'date_of_death' => null,
+                'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
+                'dod'           => null,
                 'location'      => $faker->city,
                 'father_id'     => $father_id,
                 'mother_id'     => $mother_id,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
 
             // Child 2
@@ -68,11 +70,12 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstName($gender),
                 'last_name'     => $lastname1,
                 'gender'        => $gender,
-                'date_of_birth' => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
-                'date_of_death' => null,
+                'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
+                'dod'           => null,
                 'location'      => $faker->city,
                 'father_id'     => $father_id,
                 'mother_id'     => $mother_id,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
 
             //
@@ -84,9 +87,10 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstNameMale,
                 'last_name'     => $lastname2,
                 'gender'        => 'male',
-                'date_of_birth' => $faker->date($format = 'Y-m-d', $max = 'now'),
-                'date_of_death' => null,
+                'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'dod'           => null,
                 'location'      => $faker->city,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
             $father_id = DB::getPdo()->lastInsertId();
             
@@ -95,9 +99,10 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstNameFemale,
                 'last_name'     => $lastname2,
                 'gender'        => 'female',
-                'date_of_birth' => $faker->date($format = 'Y-m-d', $max = 'now'),
-                'date_of_death' => null,
+                'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'dod'           => null,
                 'location'      => $faker->city,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
             $mother_id = DB::getPdo()->lastInsertId();
 
@@ -107,11 +112,12 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstName($gender),
                 'last_name'     => $lastname2,
                 'gender'        => $gender,
-                'date_of_birth' => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
-                'date_of_death' => null,
+                'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
+                'dod'           => null,
                 'location'      => $faker->city,
                 'father_id'     => $father_id,
                 'mother_id'     => $mother_id,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
 
             // Child 2
@@ -120,11 +126,12 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstName($gender),
                 'last_name'     => $lastname2,
                 'gender'        => $gender,
-                'date_of_birth' => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
-                'date_of_death' => null,
+                'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
+                'dod'           => null,
                 'location'      => $faker->city,
                 'father_id'     => $father_id,
                 'mother_id'     => $mother_id,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
 
             // Child 3
@@ -133,11 +140,12 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstName($gender),
                 'last_name'     => $lastname2,
                 'gender'        => $gender,
-                'date_of_birth' => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
-                'date_of_death' => null,
+                'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
+                'dod'           => null,
                 'location'      => $faker->city,
                 'father_id'     => $father_id,
                 'mother_id'     => $mother_id,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
 
             //
@@ -149,9 +157,10 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstNameMale,
                 'last_name'     => $lastname3,
                 'gender'        => 'male',
-                'date_of_birth' => $faker->date($format = 'Y-m-d', $max = 'now'),
-                'date_of_death' => null,
+                'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'dod'           => null,
                 'location'      => $faker->city,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
             $father_id = DB::getPdo()->lastInsertId();
             
@@ -160,9 +169,10 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstNameFemale,
                 'last_name'     => $lastname3,
                 'gender'        => 'female',
-                'date_of_birth' => $faker->date($format = 'Y-m-d', $max = 'now'),
-                'date_of_death' => null,
+                'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'dod'           => null,
                 'location'      => $faker->city,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
             $mother_id = DB::getPdo()->lastInsertId();
 
@@ -172,11 +182,12 @@ class ProfilesTableSeeder extends Seeder
                 'first_name'    => $faker->firstName($gender),
                 'last_name'     => $lastname3,
                 'gender'        => $gender,
-                'date_of_birth' => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
-                'date_of_death' => null,
+                'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
+                'dod'           => null,
                 'location'      => $faker->city,
                 'father_id'     => $father_id,
                 'mother_id'     => $mother_id,
+                'description'   => $faker->sentence($nbWords = 12, $variableNbWords = true),
             ]);
     }
 }
