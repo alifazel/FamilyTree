@@ -34,7 +34,7 @@
                             </div>
                             <div class="col-md-6">
                                 <!-- Profile Information -->
-                                <h5 class="card-title">{{ $profile->first_name }} {{ $profile->last_name }}</h5>
+                                <h5 class="card-title">{{ $profile->name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Aged {{ $profile->getAge() }}, Living in {{ $profile->location }}</h6>
                                 <!-- Profile - Parents info -->
                                 @if ($profile->hasParents())

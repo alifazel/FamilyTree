@@ -17,8 +17,7 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
 
             // Add Table specific columns
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('name');
             $table->string('gender', 6);
             $table->date('dob');
             $table->date('dod')->nullable($value = true);

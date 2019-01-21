@@ -28,8 +28,7 @@ class ProfilesTableSeeder extends Seeder
 
             // Father
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstNameMale,
-                'last_name'     => $lastname1,
+                'name'          => $faker->firstNameMale . ' ' . $lastname1,
                 'gender'        => 'male',
                 'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'dod'           => null,
@@ -40,8 +39,7 @@ class ProfilesTableSeeder extends Seeder
             
             // Mother
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstNameFemale,
-                'last_name'     => $lastname1,
+                'name'          => $faker->firstNameFemale . ' ' . $lastname1,
                 'gender'        => 'female',
                 'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'dod'           => null,
@@ -53,8 +51,7 @@ class ProfilesTableSeeder extends Seeder
             // Child 1
             $gender = $faker->randomElement(['male', 'female']);
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstName($gender),
-                'last_name'     => $lastname1,
+                'name'          => $faker->firstName($gender) . ' ' . $lastname1,
                 'gender'        => $gender,
                 'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
                 'dod'           => null,
@@ -67,8 +64,7 @@ class ProfilesTableSeeder extends Seeder
             // Child 2
             $gender = $faker->randomElement(['male', 'female']);
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstName($gender),
-                'last_name'     => $lastname1,
+                'name'          => $faker->firstName($gender) . ' ' . $lastname1,
                 'gender'        => $gender,
                 'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
                 'dod'           => null,
@@ -84,8 +80,7 @@ class ProfilesTableSeeder extends Seeder
 
             // Father
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstNameMale,
-                'last_name'     => $lastname2,
+                'name'          => $faker->firstNameMale . ' ' . $lastname2,
                 'gender'        => 'male',
                 'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'dod'           => null,
@@ -96,8 +91,7 @@ class ProfilesTableSeeder extends Seeder
             
             // Mother
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstNameFemale,
-                'last_name'     => $lastname2,
+                'name'          => $faker->firstNameFemale . ' ' . $lastname2,
                 'gender'        => 'female',
                 'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'dod'           => null,
@@ -109,8 +103,7 @@ class ProfilesTableSeeder extends Seeder
             // Child 1
             $gender = $faker->randomElement(['male', 'female']);
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstName($gender),
-                'last_name'     => $lastname2,
+                'name'          => $faker->firstName($gender) . ' ' . $lastname2,
                 'gender'        => $gender,
                 'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
                 'dod'           => null,
@@ -123,8 +116,7 @@ class ProfilesTableSeeder extends Seeder
             // Child 2
             $gender = $faker->randomElement(['male', 'female']);
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstName($gender),
-                'last_name'     => $lastname2,
+                'name'          => $faker->firstName($gender) . ' ' . $lastname2,
                 'gender'        => $gender,
                 'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
                 'dod'           => null,
@@ -137,8 +129,7 @@ class ProfilesTableSeeder extends Seeder
             // Child 3
             $gender = $faker->randomElement(['male', 'female']);
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstName($gender),
-                'last_name'     => $lastname2,
+                'name'          => $faker->firstName($gender) . ' ' . $lastname2,
                 'gender'        => $gender,
                 'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
                 'dod'           => null,
@@ -154,8 +145,7 @@ class ProfilesTableSeeder extends Seeder
 
             // Father
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstNameMale,
-                'last_name'     => $lastname3,
+                'name'          => $faker->firstNameMale . ' ' . $lastname3,
                 'gender'        => 'male',
                 'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'dod'           => null,
@@ -166,8 +156,7 @@ class ProfilesTableSeeder extends Seeder
             
             // Mother
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstNameFemale,
-                'last_name'     => $lastname3,
+                'name'          => $faker->firstNameFemale . ' ' . $lastname3,
                 'gender'        => 'female',
                 'dob'           => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'dod'           => null,
@@ -179,8 +168,7 @@ class ProfilesTableSeeder extends Seeder
             // Child 1
             $gender = $faker->randomElement(['male', 'female']);
             DB::table('profiles')->insert([
-                'first_name'    => $faker->firstName($gender),
-                'last_name'     => $lastname3,
+                'name'          => $faker->firstName($gender) . ' ' . $lastname3,
                 'gender'        => $gender,
                 'dob'           => $faker->dateTimeThisDecade($max = 'now', $timezone = null),
                 'dod'           => null,

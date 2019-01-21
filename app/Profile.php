@@ -37,9 +37,9 @@ class Profile extends Model
 
         // Return 'Name' and 'ID' if exists, otherwise NULL.
         return ['father_id'     => isset($father) ? $father->id : null ,
-                'father_name'   => isset($father) ? $father->first_name . ' ' . $father->last_name : null,
+                'father_name'   => isset($father) ? $father->name : null,
                 'mother_id'     => isset($mother) ? $mother->id : null,
-                'mother_name'   => isset($mother) ? $mother->first_name . ' ' . $mother->last_name : null,
+                'mother_name'   => isset($mother) ? $mother->name : null,
             ];
     }
     
