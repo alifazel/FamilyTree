@@ -2,14 +2,12 @@
 
 @section('content')
 
-@if (session('status'))
-    <div class="alert alert-success" role="alert">
-        {{ session('status') }}
-    </div>
-@endif
-
-
 <div class="container">
+
+    <!-- Display Session messages -->
+    @if(Session::has('message'))
+        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+    @endif
 
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -53,9 +51,9 @@
                                 <p class="card-text"><span class="font-weight-bold">Biography: </span>{{ $profile->description }}</p>
                             </div>
                             <div class="col-md-3 align-self-center">
-                                <button type="button" class="btn btn-outline-secondary btn-sm btn-block" style="white-space: normal">View Profile</button>
-                                <button type="button" class="btn btn-outline-secondary btn-sm btn-block" style="white-space: normal">Edit Profile</button>
-                                <button type="button" class="btn btn-primary btn-sm btn-block" style="white-space: normal">Browse Family Tree</button>
+                                <a href="profile" class="btn btn-outline-secondary btn-sm btn-block" style="white-space: normal">View Profile</a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm btn-block" style="white-space: normal">Edit Profile</a>
+                                <a href="#" class="btn btn-primary btn-sm btn-block" style="white-space: normal">Browse Family Tree</a>
                             </div>
                         </div>
                     </div>

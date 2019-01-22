@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile',              'ProfileController@index');
     Route::get('/profile/create',       'ProfileController@create');
     Route::post('/profile',             'ProfileController@store');
+    Route::post('/profile/link',        'ProfileController@storeProfileLink');
     Route::get('/profile/{id}',         'ProfileController@show');
     Route::get('/profile/{id}/edit',    'ProfileController@edit');
     Route::put('/profile/{id}',         'ProfileController@update');
