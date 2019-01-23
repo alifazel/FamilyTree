@@ -2,12 +2,12 @@
 
 @section('content')
 
-<!-- Display Session messages -->
-@if(Session::has('message'))
-    <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-@endif
-
 <div class="container">
+    <!-- Display Session messages -->
+    @if(Session::has('message'))
+    <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+    @endif
+
     <div class="row justify-content-center">
         <!-- Side bar -->
         <div class="col-sm-3">

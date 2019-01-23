@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
 
+    /**
+     * Returns response for Search API
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response (JSON)
+     */
     public function search(Request $request)
     {
         if($request->keywords) {
@@ -26,7 +32,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('viewProfile', ['profile' => Auth::user()->profile]);
+        return view('profiles/show', ['profile' => Auth::user()->profile]);
     }
 
     /**
@@ -37,7 +43,7 @@ class ProfileController extends Controller
     public function create()
     {
         //
-        return view('createProfile');
+        return view('profiles/create');
     }
 
     /**
@@ -94,7 +100,7 @@ class ProfileController extends Controller
     {
         //dd(Profile::find($id));
         $profile = Profile::find($id);
-        return view('viewProfile', ['profile' => $profile]);
+        return view('profiles/show', ['profile' => $profile]);
     }
 
     /**

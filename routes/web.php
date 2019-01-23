@@ -32,5 +32,3 @@ Route::middleware('auth')->group(function () {
     Route::put('/profile/{id}',         'ProfileController@update');
     Route::delete('/profile/{id}',      'ProfileController@destroy');
 });
-
-
