@@ -23,6 +23,10 @@ class CreateProfilesTable extends Migration
             $table->date('dod')->nullable($value = true);
             $table->string('location', 100)->nullable($value = true);
             $table->text('description')->nullable($value = true);
+            $table->string('email', 30)->nullable($value = true);
+            $table->string('contact_number', 20)->nullable($value = true);
+            $table->string('marital_status', 10)->nullable($value = true);
+            $table->string('facebook_url', 100)->nullable($value = true);
 
             // Relationship
             $table->unsignedInteger('father_id')->nullable($value = true);
