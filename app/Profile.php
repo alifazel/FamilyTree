@@ -13,6 +13,14 @@ class Profile extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function isOwner(User $user) {
+        // Check to see if there is a user attached to this profile
+        if(!is_null($this->user)) {
+            // Compare attached user to authenticated user
+            return ($this->user->id == $user->id) ? true : false;
+        } else return false;
+    }
+
     public function getAge()
     {
         // Get DOB and current date and convert to 'datetime' format

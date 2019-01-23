@@ -26,7 +26,6 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
         return view('viewProfile', ['profile' => Auth::user()->profile]);
     }
 
@@ -91,9 +90,11 @@ class ProfileController extends Controller
      * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show($id)
     {
-        //
+        //dd(Profile::find($id));
+        $profile = Profile::find($id);
+        return view('viewProfile', ['profile' => $profile]);
     }
 
     /**
