@@ -26,11 +26,11 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-3 text-center">
+                            <div class="col-lg-3 col-md-6 col-sm-6 mb-2 text-center">
                                 <!-- Profile Avatar -->
-                                <img class="rounded" src="http://i.pravatar.cc/150"/>
+                                <img class="col-md-12 rounded" src="http://i.pravatar.cc/150"/>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
                                 <!-- Profile Information -->
                                 <h5 class="card-title">{{ $profile->name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Aged {{ $profile->getAge() }}, Living in {{ $profile->location }}</h6>
@@ -50,7 +50,7 @@
                                 <!-- Profile Bio -->
                                 <p class="card-text"><span class="font-weight-bold">Biography: </span>{{ $profile->description }}</p>
                             </div>
-                            <div class="col-md-3 align-self-center">
+                            <div class="col-lg-3 align-self-center mt-sm-3">
                                 <a href="profile" class="btn btn-outline-secondary btn-sm btn-block" style="white-space: normal">View Profile</a>
                                 <a href="#" class="btn btn-outline-secondary btn-sm btn-block" style="white-space: normal">Edit Profile</a>
                                 <a href="#" class="btn btn-primary btn-sm btn-block" style="white-space: normal">Browse Family Tree</a>
