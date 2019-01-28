@@ -51,8 +51,8 @@
                                 <p class="card-text"><span class="font-weight-bold">Biography: </span>{{ $profile->description }}</p>
                             </div>
                             <div class="col-lg-3 align-self-center mt-sm-3">
-                                <a href="profile" class="btn btn-outline-secondary btn-sm btn-block" style="white-space: normal">View Profile</a>
-                                <a href="#" class="btn btn-outline-secondary btn-sm btn-block" style="white-space: normal">Edit Profile</a>
+                                <a href="{{ route('profiles.index') }}" class="btn btn-outline-secondary btn-sm btn-block" style="white-space: normal">View Profile</a>
+                                <a href="{{ route('profiles.edit', $profile->id) }}" class="btn btn-outline-secondary btn-sm btn-block" style="white-space: normal">Edit Profile</a>
                                 <a href="#" class="btn btn-primary btn-sm btn-block" style="white-space: normal">Browse Family Tree</a>
                             </div>
                         </div>

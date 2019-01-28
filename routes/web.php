@@ -23,12 +23,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
     // Profile Controller Routes (CRUD)
-    Route::get('/profile',              'ProfileController@index');
-    Route::get('/profile/create',       'ProfileController@create');
-    Route::post('/profile',             'ProfileController@store');
-    Route::post('/profile/link',        'ProfileController@storeProfileLink');
-    Route::get('/profile/{id}',         'ProfileController@show');
-    Route::get('/profile/{id}/edit',    'ProfileController@edit');
-    Route::put('/profile/{id}',         'ProfileController@update');
-    Route::delete('/profile/{id}',      'ProfileController@destroy');
+    Route::get('/profile',              'ProfileController@index')->name('profiles.index');
+    Route::get('/profile/create',       'ProfileController@create')->name('profiles.create');
+    Route::post('/profile',             'ProfileController@store')->name('profiles.store');
+    Route::post('/profile/link',        'ProfileController@storeProfileLink')->name('profiles.storeLink');
+    Route::get('/profile/{id}',         'ProfileController@show')->name('profiles.show');
+    Route::get('/profile/{id}/edit',    'ProfileController@edit')->name('profiles.edit');
+    Route::patch('/profile/{id}',       'ProfileController@update')->name('profiles.update');
+    Route::delete('/profile/{id}',      'ProfileController@destroy')->name('profiles.destroy');
 });

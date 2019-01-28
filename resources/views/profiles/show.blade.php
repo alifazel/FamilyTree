@@ -25,8 +25,8 @@
                                 {{ $profile->location }}
                             </p>
                             <p class="card-text text-center">
-                                @if ($profile->isOwner(Auth::user())) 
-                                <a href="" class="btn btn-success btn-sm">Edit Profile</a>
+                                @if ($profile->isOwner(Auth::user()))
+                                <a href="{{ route('profiles.edit', $profile->id) }}" class="btn btn-success btn-sm">Edit Profile</a>
                                 @else
                                 <a href="" class="btn btn-primary btn-sm">Contact</a>
                                 @endif
