@@ -123,12 +123,12 @@ class ProfileController extends Controller
             // Validate Request
             $request->validate([
                 'rq_name'       => 'required',
+                'rq_email'      => 'required|email',
                 'rq_gender'     => ['required', Rule::in(['Male', 'Female'])],
                 'rq_dob'        => 'required|date',
                 'rq_dod'        => 'nullable|date|after:rq_dob',
                 'rq_location'   => 'nullable',
                 'rq_description'=> 'nullable|max:2000',
-                'rq_email'      => 'nullable|email',
                 'rq_contact_number' => 'nullable',
                 'rq_marital_status' => ['nullable', Rule::in(['Single', 'Married', 'Divorced', 'Widow'])],
               ]);

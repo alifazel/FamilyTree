@@ -12,9 +12,7 @@
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
+                ERROR: Please make all fields are filled in correctly.
             </ul>
         </div>
     @endif
@@ -33,21 +31,26 @@
                         <div class="form-group row">
                             <label for="fullname" class="col-sm-2 col-form-label">Full Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="rq_name" aria-describedby="nameHelp" placeholder="Enter Name" value="{{ $profile->name }}">
+                                <input type="text" class="form-control {{ $errors->has('rq_name') ? "is-invalid" : "" }}" name="rq_name" aria-describedby="nameHelp" placeholder="Enter Name" value="{{ $profile->name }}">
+                                @if ($errors->has('rq_name'))
+                                <div class="invalid-feedback">This is a required field, using your full name helps others find you more easily.</div>
+                                @else
                                 <small id="nameHelp" class="form-text text-muted">Using your full name helps others find you more easily.</small>
+                                @endif
                             </div>
                         </div>
                         <!-- E-mail Address -->
                         <div class="form-group row">
                             <label for="emailaddress" class="col-sm-2 col-form-label">E-mail Address</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" name="rq_email" placeholder="Enter E-mail Address" value="{{ $profile->email }}">
+                                <input type="email" class="form-control {{ $errors->has('rq_email') ? "is-invalid" : "" }}" name="rq_email" placeholder="Enter E-mail Address" value="{{ $profile->email }}">
+                                <div class="invalid-feedback">This is a required field, it helps us to contact you in the case of any issues.</div>
                             </div>
                         </div>
                         <!-- Gender -->
                         <div class="form-group row">
-                            <label for="gender" class="col-sm-2 col-form-label">Gender</label>
-                            <div class="col-sm-10"><select class="custom-select" name="rq_gender">
+                            <label for="gender" class="col-sm-2 col-form-label ">Gender</label>
+                            <div class="col-sm-10"><select class="custom-select {{ $errors->has('rq_gender') ? "is-invalid" : "" }}" name="rq_gender">
                                 <option value="Male" {{ $profile->gender == "Male" ? "Selected" : ""}}>Male</option>
                                 <option value="Female" {{ $profile->gender == "Female" ? "Selected" : ""}}>Female</option>
                             </select></div>
@@ -56,14 +59,14 @@
                         <div class="form-group row">
                             <label for="dob" class="col-sm-2 col-form-label">Date Of Birth</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="date" value="{{ $profile->dob }}" name="rq_dob">
+                                <input class="form-control {{ $errors->has('rq_dob') ? "is-invalid" : "" }}" type="date" value="{{ $profile->dob }}" name="rq_dob">
                             </div>
                         </div>
                         <!-- Death Date -->
                         <div class="form-group row">
                             <label for="dod" class="col-sm-2 col-form-label">Date Of Death</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="date" value="{{ $profile->dod }}" name="rq_dod">
+                                <input class="form-control {{ $errors->has('rq_dod') ? "is-invalid" : "" }}" type="date" value="{{ $profile->dod }}" name="rq_dod">
                                 <small id="contactHelp" class="form-text text-muted">Leave this field empty if not applicable.</small>
                             </div>
                         </div>
@@ -71,13 +74,13 @@
                         <div class="form-group row">
                             <label for="location" class="col-sm-2 col-form-label">Current Location</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="rq_location" placeholder="Enter your home town" value="{{ $profile->location }}">
+                                <input type="text" class="form-control {{ $errors->has('rq_location') ? "is-invalid" : "" }}" name="rq_location" placeholder="Enter your home town" value="{{ $profile->location }}">
                             </div>
                         </div>
                         <!-- Marital Status -->
                         <div class="form-group row">
                             <label for="marital_status" class="col-sm-2 col-form-label">Marital Status</label>
-                            <div class="col-sm-10"><select class="custom-select" name="rq_marital_status">
+                            <div class="col-sm-10"><select class="custom-select {{ $errors->has('rq_marital_status') ? "is-invalid" : "" }}" name="rq_marital_status">
                                     <option value="Single"   {{ $profile->marital_status == "Single" ? "Selected" : ""}}>Single</option>
                                     <option value="Married"  {{ $profile->marital_status == "Married" ? "Selected" : ""}}>Married</option>
                                     <option value="Divorced" {{ $profile->marital_status == "Divorced" ? "Selected" : ""}}>Divorced</option>
@@ -87,13 +90,13 @@
                         <!-- Description -->
                         <div class="form-group row">
                             <label for="description" class="col-sm-2 col-form-label">Short Bio</label>
-                            <div class="col-sm-10"><textarea type="text" class="form-control" name="rq_description" placeholder="Enter a short description about yourself...">{{ $profile->description }}</textarea></div>
+                            <div class="col-sm-10"><textarea type="text" class="form-control" name="rq_description {{ $errors->has('rq_description') ? "is-invalid" : "" }}" placeholder="Enter a short description about yourself...">{{ $profile->description }}</textarea></div>
                         </div>
                         <!-- Mobile Number -->
                         <div class="form-group row">
                             <label for="contact_number" class="col-sm-2 col-form-label">Contact Number</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="rq_contact_number" placeholder="Enter your contact number" value="{{ $profile->contact_number }}">
+                                <input type="text" class="form-control" name="rq_contact_number {{ $errors->has('rq_contact_number') ? "is-invalid" : "" }}" placeholder="Enter your contact number" value="{{ $profile->contact_number }}">
                                 <small id="contactHelp" class="form-text text-muted">We advise using your mobile number as this information will only be accessible to other family members.</small>
                             </div>
                         </div>
@@ -101,7 +104,7 @@
                         <div class="form-group row">
                             <label for="facebook_url" class="col-sm-2 col-form-label">Facebook Account</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="rq_facebook_url" placeholder="Connect your facebook account" value="{{ $profile->facebook_url }}">
+                                <input type="text" class="form-control {{ $errors->has('rq_facebook_url') ? "is-invalid" : "" }}" name="rq_facebook_url" placeholder="Connect your facebook account" value="{{ $profile->facebook_url }}">
                             </div>
                         </div>
                         <div class="form-group row">
